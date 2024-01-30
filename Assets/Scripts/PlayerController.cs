@@ -1,12 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private Button LButton;
+    [SerializeField] private Button RButton;
     [SerializeField] private float speed = 10;
     public float radius = 1;
 
+    private void Start()
+    {
+        //버튼에 이벤트를 할당하는 다른 방법(유니티 에디터에서 버튼에 함수를 직접 넣지 않는 방법)
+        LButton.onClick.AddListener(() => { Debug.Log("왼쪽버튼 클릭"); });
+        RButton.onClick.AddListener(() => { Debug.Log("오른쪽버튼 클릭"); });
+    }
     void Update()
     {
         if (GameManager.isGameOver)
@@ -32,4 +44,13 @@ public class PlayerController : MonoBehaviour
     //    Gizmos.color = Color.red;
     //    Gizmos.DrawSphere(transform.position, radius);
     //}
+    private void RButtonClick()
+    {
+        
+    }
+
+    private void LButtonClick()
+    {
+
+    }
 }
