@@ -948,6 +948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartButton: {fileID: 1933189297}
+  Lbutton: {fileID: 159943814}
+  Rbutton: {fileID: 306413090}
   hpGauge: {fileID: 1517934705}
   hpText: {fileID: 952176096}
   damage: 5

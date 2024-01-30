@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //버튼에 이벤트를 할당하는 다른 방법(유니티 에디터에서 버튼에 함수를 직접 넣지 않는 방법)
-        LButton.onClick.AddListener(() => { Debug.Log("왼쪽버튼 클릭"); });
-        RButton.onClick.AddListener(() => { Debug.Log("오른쪽버튼 클릭"); });
+        LButton.onClick.AddListener(() => { transform.Translate(Vector3.left * speed * 20 * Time.deltaTime); });
+        RButton.onClick.AddListener(() => { transform.Translate(Vector3.right * speed * 20 * Time.deltaTime); });
     }
     void Update()
     {
@@ -44,13 +44,4 @@ public class PlayerController : MonoBehaviour
     //    Gizmos.color = Color.red;
     //    Gizmos.DrawSphere(transform.position, radius);
     //}
-    private void RButtonClick()
-    {
-        
-    }
-
-    private void LButtonClick()
-    {
-
-    }
 }

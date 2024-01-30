@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject restartButton;
+    [SerializeField] private Button Lbutton;
+    [SerializeField] private Button Rbutton;
     [SerializeField] private Image hpGauge;
     [SerializeField] private Text hpText;
 
@@ -33,7 +35,9 @@ public class GameManager : MonoBehaviour
         if (hpGauge.fillAmount <= 0)//체력이 0이하면
         {
             isGameOver = true;//게임오버
-            restartButton.SetActive(true);//버튼 활성화            
+            restartButton.SetActive(true);//버튼 활성화
+            Lbutton.interactable = false;
+            Rbutton.interactable = false;
             //활성화된 화살 모두 지우기
             foreach (GameObject items in arrowGenerator.arrowList)
             {
@@ -46,6 +50,6 @@ public class GameManager : MonoBehaviour
     public void Restart()//재시도 버튼
     {
         isGameOver = false;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("CatEscape");
     }
 }
