@@ -9,7 +9,7 @@ public class CamOffset : MonoBehaviour
 
     void LateUpdate()
     {
-        if (target.transform.position.y < startOffset)
+        if (target.transform.position.y <= transform.position.y)
         {
             //??카메라 움직임이 끊김.조건문-특정 높이 이하에서 바로 초기화가 되는 문제
             transform.position = new Vector3(0, 1, -10);

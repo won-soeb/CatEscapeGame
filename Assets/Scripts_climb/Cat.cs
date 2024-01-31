@@ -12,11 +12,11 @@ public class Cat : MonoBehaviour
     [SerializeField] float moveForce = 10f;
     [SerializeField] float speedLimit = 2.8f;
     [SerializeField] private GameDirector gameDirector;
-    private bool isJumping=false;
+    private bool isJumping = false;
     private void Start()
     {
         //GameDirector를 컴포넌트로 가져옴
-        gameDirector = FindAnyObjectByType<GameDirector>(); 
+        gameDirector = FindAnyObjectByType<GameDirector>();
     }
     private void Awake()
     {
@@ -26,13 +26,13 @@ public class Cat : MonoBehaviour
     void FixedUpdate()//물리현상을 처리할 경우 Update대신 써야함
     {
         //점프상태일때는 키입력을 막음
-        if (isJumping) return;        
+        if (isJumping) return;
         //점프 구현
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(transform.up * jumpForce);//로컬좌표
+            //rb.AddForce(Vector3.up * moveForce);//월드좌표
             isJumping = true;
-            //rb.AddForce(Vector3.up * force);//월드좌표
         }
 
         float dirX = 0;//기준점(좌표)
@@ -69,7 +69,6 @@ public class Cat : MonoBehaviour
     //충돌(통과)판정 - istrigger 켜짐
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision + "의 콜라이더와 충돌시작");
         //장면전환
         SceneManager.LoadScene("ClimbCloudClear");//이름으로 로드
         //SceneManager.LoadScene(1);//빌드번호로 로드
