@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ClimbCloud.unity
+    guid: e5220cf37c906a5499729972a2a73c9a
+  - enabled: 1
+    path: Assets/Scenes/ClimbCloudClear.unity
+    guid: 6fade88d91a71e54080095d432f99035
   m_configObjects: {}
