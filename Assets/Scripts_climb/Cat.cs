@@ -11,7 +11,7 @@ public class Cat : MonoBehaviour
     [SerializeField] float jumpForce = 500f;
     [SerializeField] float moveForce = 10f;
     [SerializeField] float speedLimit = 2.8f;
-    [SerializeField] private GameDirector gameDirector;
+    private GameDirector gameDirector;
     private bool isJumping = false;//점프여부
     private void Awake()
     {
