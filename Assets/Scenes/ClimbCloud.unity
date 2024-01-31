@@ -390,7 +390,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &679668910
 SpriteRenderer:
@@ -929,7 +929,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 679668914}
-  startOffset: -0.2
 --- !u!1 &1899568186
 GameObject:
   m_ObjectHideFlags: 0
