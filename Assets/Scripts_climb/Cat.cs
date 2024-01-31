@@ -5,8 +5,10 @@ using UnityEngine;
 public class Cat : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
     [SerializeField] float jumpForce = 500f;
     [SerializeField] float moveForce = 10f;
+    [SerializeField] float speedLimit = 2.8f;
     [SerializeField] private GameDirector gameDirector;
     private void Start()
     {
@@ -16,6 +18,7 @@ public class Cat : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     void FixedUpdate()//물리현상을 처리할 경우 Update대신 써야함
     {
@@ -40,11 +43,16 @@ public class Cat : MonoBehaviour
         //Debug.Log(dir);
 
         //속도제한
-        if (Mathf.Abs(rb.velocity.x) < 2.8f)
-        {
-            rb.AddForce(transform.right * dirX * moveForce);
-        }
+        if (Mathf.Abs(rb.velocity.x) > speedLimit) return;
         
-        gameDirector.UpdateVelocityText(rb.velocity);//텍스트로 출력
+        //속도에 따른 이동
+        rb.AddForce(transform.right * dirX * moveForce);
+        
+        //이동속도에 따라서 애니메이션 반영
+        anim.speed = Mathf.Abs(rb.velocity.x);
+        //Animator의 speed프로퍼티는 음수면 안된다
+        
+        //텍스트로 출력
+        gameDirector.UpdateVelocityText(rb.velocity);
     }
 }

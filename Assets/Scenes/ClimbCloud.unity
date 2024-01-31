@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 390871270}
   - component: {fileID: 390871269}
   m_Layer: 0
-  m_Name: CloudDirector
+  m_Name: GameDirector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 679668912}
   - component: {fileID: 679668913}
   - component: {fileID: 679668914}
+  - component: {fileID: 679668915}
   m_Layer: 0
   m_Name: cat
   m_TagString: Untagged
@@ -706,6 +707,27 @@ MonoBehaviour:
   jumpForce: 500
   moveForce: 10
   gameDirector: {fileID: 0}
+--- !u!95 &679668915
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679668908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5d6fa13b0f9d7842b6208cdb814cc5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &771896266
 GameObject:
   m_ObjectHideFlags: 0
